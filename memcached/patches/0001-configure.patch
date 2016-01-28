@@ -1,5 +1,5 @@
---- build/configure.orig	2015-11-20 02:02:49.000000000 -0500
-+++ build/configure		2016-01-21 10:46:21.228720374 -0500
+--- build/configure	2016-01-28 12:45:32.444094587 -0500
++++ build/configure	2016-01-28 13:12:09.796051190 -0500
 @@ -2969,7 +2969,6 @@
      as_fn_error $? "Your 'rm' program is bad, sorry." "$LINENO" 5
    fi
@@ -8,7 +8,38 @@
  ac_config_headers="$ac_config_headers config.h"
  
  
-@@ -5901,7 +5900,16 @@
+@@ -5123,12 +5122,6 @@
+ then
+     org_cflags=$CFLAGS
+     CFLAGS=-m64
+-    if test "$cross_compiling" = yes; then :
+-  { { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+-$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+-as_fn_error $? "cannot run test program while cross compiling
+-See \`config.log' for more details" "$LINENO" 5; }
+-else
+   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -5142,7 +5135,7 @@
+ }
+ 
+ _ACEOF
+-if ac_fn_c_try_run "$LINENO"; then :
++if ac_fn_c_try_compile "$LINENO"; then :
+ 
+       CFLAGS="-m64 $org_cflags"
+ 
+@@ -5155,8 +5148,6 @@
+   conftest.$ac_objext conftest.beam conftest.$ac_ext
+ fi
+ 
+-fi
+-
+ # Issue 213: Search for clock_gettime to help people linking
+ #            with a static version of libevent
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing clock_gettime" >&5
+@@ -5901,7 +5892,16 @@
    $as_echo_n "(cached) " >&6
  else
  
@@ -26,7 +57,7 @@
    { { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
  $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
  as_fn_error $? "cannot run test program while cross compiling
-@@ -5924,17 +5932,18 @@
+@@ -5924,17 +5924,18 @@
  _ACEOF
  if ac_fn_c_try_run "$LINENO"; then :
  
